@@ -6,3 +6,7 @@ execute 'install rails' do
   user 'vagrant'
 end
 
+execute 'install bundler' do
+  command "#{gem} install bundler"
+  user 'vagrant'
+end

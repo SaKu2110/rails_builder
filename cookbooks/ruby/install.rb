@@ -7,8 +7,17 @@ ver = node["ruby"]
 
 package 'gcc'
 package 'gcc-c++'
+package 'glibc-headers'
 package 'openssl-devel'
+package 'libyaml-devel'
 package 'readline-devel'
+package 'sqlite-devel'
+
+execute 'add nodejs' do
+  command 'curl -sL https://rpm.nodesource.com/setup_8.x | bash -'
+  user 'root'
+end
+package 'nodejs'
 
 execute 'install rbenv' do
   command "git clone #{rbenv} #{home}/.rbenv"
